@@ -1,0 +1,300 @@
+/* ========================= */
+/* 1. Root Variables */
+/* ========================= */
+
+:root {
+    /* Font Sizes */
+    --f1: .75rem;
+    --f2: .875rem;
+    --f3: 1.125rem;
+    --f4: 2.625rem;
+    --f8: 4.5rem;
+
+    /* Colors */
+    --c-black: #000000;
+    --c-white: #FFFFFF;
+    --c-gray-900: #111827;
+    --c-gray-800: #272727;
+    --c-gray-700: #374151;
+    --c-gray-600: #6B7280;
+    --c-gray-500: #9CA3AF;
+    --c-gray-400: #D1D5DB;
+    --c-gray-300: #E5E7EB;
+    --c-gray-200: #F9FAFB;
+    --c-accent-star: #FEC654;
+    --c-accent-hover: #2d2ba4;
+}
+
+/* ========================= */
+/* 2. Global Reset & Base Styles */
+/* ========================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", serif;
+    font-size: var(--f2);
+}
+
+/* ========================= */
+/* 3. Typography */
+/* ========================= */
+
+h1,
+h2 {
+    color: var(--c-white);
+}
+
+h1 {
+    font-size: var(--f4);
+}
+
+h2 {
+    font-size: var(--f3);
+}
+
+h2 button {
+    all: unset;
+    cursor: pointer;
+}
+
+h3 {
+    font-size: var(--f3);
+    color: var(--c-gray-900);
+}
+
+p {
+    padding: 0;
+}
+
+.text-sm {
+    font-size: var(--f1);
+}
+
+/* ========================= */
+/* 4. Header & Navigation */
+/* ========================= */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 150px;
+    padding: 3em;
+    background: url(./assets/old-school-film-projector.jpg) center/cover no-repeat;
+    position: relative;
+    margin-bottom: 4em;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+header h1,
+header h2 {
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================= */
+/* 5. Search Form */
+/* ========================= */
+
+form.search-form {
+    position: absolute;
+    top: calc(100% - 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 0;
+    border: 1px solid var(--c-gray-400);
+    border-radius: 6px;
+    background: var(--c-white);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+form i.fa-magnifying-glass {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--c-gray-500);
+    pointer-events: none;
+}
+
+.search-form input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    padding: .75em;
+    padding-left: 2.75em;
+    border: none;
+    color: var(--c-gray-600);
+    border-radius: 6px;
+}
+
+.search-form button {
+    width: 90px;
+    padding: .75em;
+    background: var(--c-gray-200);
+    border: none;
+    border-left: 1px solid var(--c-gray-300);
+    color: var(--c-gray-600);
+    border-radius: 0 6px 6px 0;
+}
+
+/* ========================= */
+/* 6. Card Layout & Styles */
+/* ========================= */
+
+.cards {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: [column-1]150px [column-2]auto;
+    gap: .75em;
+    margin: 2em;
+}
+
+.card {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: subgrid;
+    margin: 1.25em;
+    align-items: center;
+    padding-bottom: 2.75em;
+    border-bottom: 1px solid var(--c-gray-300);
+}
+
+img.poster {
+    max-width: 100%;
+    height: auto;
+}
+
+.movie-info-container {
+    display: inline-block;
+    line-height: 1.5;
+    padding-left: 1em;
+}
+
+.row-1,
+.row-2 {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.row-2 {
+    padding: .75em 0;
+}
+
+/* ========================= */
+/* 7. Buttons & Interaction */
+/* ========================= */
+
+.search-nav-btn,
+.watchlist-nav-btn,
+.add-watchlist-btn,
+.remove-watchlist-btn,
+.read-more-btn,
+.read-less-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.search-nav-btn:hover,
+.watchlist-nav-btn:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.add-watchlist-btn:hover,
+.remove-watchlist-btn:hover,
+.read-more-btn:hover,
+.read-less-btn:hover {
+    font-weight: bold;
+    color: var(--c-accent-hover);
+}
+
+.read-more-btn {
+    color: var(--c-gray-800);
+}
+
+/* ========================= */
+/* 8. Additional Styles */
+/* ========================= */
+
+.card-content {
+    display: inline;
+    color: var(--c-gray-600);
+    overflow: hidden;
+}
+
+.card-content.expand {
+    max-height: 450px;
+}
+
+.placeholder {
+    grid-column: span 2;
+    margin: 20% auto;
+    text-align: center;
+    font-size: var(--f3);
+    font-weight: bold;
+    color: var(--c-gray-400);
+}
+
+i.fa-film {
+    font-size: var(--f8);
+    padding-bottom: .25em;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+i.fa-star {
+    color: var(--c-accent-star);
+}
+
+/* ========================= */
+/* 9. Media Queries */
+/* ========================= */
+
+@container (width < 475px) {
+    .card {
+        container-type: inline-size;
+    }
+
+    img.poster {
+        margin: auto;
+    }
+
+    .movie-info-container {
+        display: grid;
+        padding-left: 0;
+        margin-top: 2em;
+    }
+}
+
+@media (width < 550px) {
+    .search-form {
+        max-width: 90%;
+    }
+}
