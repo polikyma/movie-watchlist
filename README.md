@@ -13,4 +13,4 @@ A simple web app to create and manage a personal movie watchlist. Add, remove, a
 ## Technologies Used  
 - **HTML, CSS, JavaScript**  
 - **[OMDb API](https://www.omdbapi.com/)** for movie data  
-- **Netlify** for deployment
+- **Netlify** for deployment and environment variables
